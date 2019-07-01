@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../contextMenu.js-master/contextMenu.min.css">
+    <style>
+        .memu-box{
+            border-left: #003366 solid 10px ;
+            padding-left: 50px;
+        }
+        .memu-box p{
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+<h1>contextMenu</h1>
+<div class="memu-box">
+    <h1>11</h1>
+    <p><button class="btn">gogogo</button></p>
+    <h1>12</h1>
+    <p><button class="btn">gogogo</button></p>
+    <h1>13</h1>
+    <p><button class="btn">gogogo</button></p>
+</div>
+<script src="../jquery-1.9.1.min.js"></script>
+<script src="../contextMenu.js-master/contextMenu.min.js"></script>
+<script>
+    //For example we are defining menu in object. You can also define it on Ul list. See on documentation.
+    var menu = [{
+        name: '删除',
+        title: '删除',
+        fun: function (data,event) {
+            console.log(data)
+            console.log('删除')
+        }
+    }, {
+        name: '编辑',
+        title: '编辑',
+        fun: function (data) {
+            console.log(data)
+            console.log('编辑')
+        }
+    }];
+    $('.btn').contextMenu(menu,{
+        triggerOn:'contextmenu',
+        mouseClick: 'right'
+    });
+    $('.memu-box').append(
+        '<h1>13</h1> <p><button class="btn">gogogo</button></p>'
+        )
+    $('.btn:not(.iw-mTrigger)').contextMenu(menu,{
+        triggerOn:'contextmenu',
+        mouseClick: 'right'
+    });
+    $('.btn:not(.iw-mTrigger)')
+        .contextMenu(menu,{
+        triggerOn:'contextmenu',
+        mouseClick: 'right'
+    });
+
+    $('[data-type="5"],.select_wrap,.cur_std_desc,[data-type="1"] .title,[data-type="1"] .title,.page_hd,#sub_page_nav,#map_score').hide()
+    //Calling context menu
+</script>
+</body>
+</html>

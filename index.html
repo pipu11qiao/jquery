@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src='https://cdn.jsdelivr.net/gh/naptha/tesseract.js@v1.0.14/dist/tesseract.min.js'></script>
+</head>
+<body>
+    <script>
+        // Tesseract.recognize('./test.jpg')
+        //         .progress(function (p) { console.log('progress', p) })
+        //         .then(function (result) { console.log('result', result) })
+        Tesseract.create({
+                langPath: 'https://cdn.rawgit.com/naptha/tessdata/gh-pages/3.02/',
+                corePath: 'https://cdn.rawgit.com/naptha/tesseract.js-core/0.1.0/index.js',
+            }).recognize('./test.jpg',{
+            lang: 'eng',
+        })
+            .then(function(result){
+                console.log(result)
+            })
+    </script>
+</body>
+</html>
