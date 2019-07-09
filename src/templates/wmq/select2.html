@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>sort table</title>
+  <!-- <link rel="stylesheet" href="../../plugins/select2/dist/css/select2.css" type="text/css" media="screen" title="no title" charset="utf-8"> -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
+  <style type="text/css" media="screen">
+      #sortable td {
+          border: 1px solid #ddd;
+      }
+      .city{
+          width: 200px;
+      }
+  </style>
+</head>
+<body>
+
+    <div class="wrap-table">
+        <!--这里是内容-->
+        <div class="jxssp tb1">
+            <form action="{:U(add)}" method="post" enctype="multipart/form-data" id="searchForm">
+                <table class="tab1 tab2" width="100%" id="tabData">
+                    <tr>
+                        <td width="40%">省份</td>
+                        <td width="40%">市区</td>
+                        <td>操作</td>
+                    </tr>
+                    <tr>
+                        <td >
+                            <select name="PROVINCE_ID[]"   class="short ml5 vmid province" >
+                                <option value="">选择省份</option>
+                                <option value="1">广东省</option>
+                                <option value="2">广西省</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select  multiple="multiple" class="short ml5 vmid city">
+                            </select>
+                            <input value='' name="CITY_ID[]" class='cityVal' hidden/>
+                        </td>
+                        <td>
+                            <input type="button" value="添加" class="btn blue submit tabBtn" id="add"/>
+                        </td>
+
+                    </tr>
+                </table>
+
+                <div class="mt50 text-center mb50">
+                    <button type="button" onclick='check()' class="btn btn-blue" style="font-family: '微软雅黑'">保存</button>
+                </div>
+            </form>
+        </div>
+    </div>
+<script charset="utf-8" src="../../plugins/jquery/jquery.js"></script>
+<script charset="utf-8" src="../../plugins/select2/dist/js/select2.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script>
+<script charset="utf-8" src="../../js/select2.js"></script>
+</body>
+</html>
+
