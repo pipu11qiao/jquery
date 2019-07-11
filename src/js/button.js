@@ -1,4 +1,4 @@
-(function($,document,undefined){
+(function($, document, undefined) {
     console.log($);
 
-})(jquery,document)
+})(jquery, document)
